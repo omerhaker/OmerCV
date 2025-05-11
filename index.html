@@ -4,45 +4,103 @@
     <meta charset="UTF-8">
     <title>Omer Haker - CV</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Journal+CLM&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dashen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-<body>
+<body style="font-family: 'Helvetica World', serif;">
     <div class="container">
-        <header>
+        <header style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
             <img src="omer_profile.jpg" alt="Omer's Profile Picture" class="profile-img">
             <h1>Omer Haker</h1>
-            <a href="Omer_Haker_CV.pdf" download class="download-btn">Download CV (PDF)</a>
+            <h2>Digital Marketing Manager</h2>
+        
         </header>
+        <div class="fixed-contact-info">
+            <ul>
+                <li><i class="fas fa-phone-alt"></i> +972527928282</li>
+                <li><i class="fas fa-envelope-open-text"></i> omerhaker98@gmail.com</li>
+                <li><i class="fas fa-map-marker-alt"></i> Ramat Gan, Israel</li>
+                <li><i class="fab fa-linkedin-in"></i> <a href="https://www.linkedin.com/in/omer-haker-b67101305/" target="_blank">LinkedIn</a></li>
+            </ul>
+        </div>
 
         <nav>
             <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#objective">Objective</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
+                <li><a href="#about" class="active"><i class="fas fa-user"></i> About Me</a></li>
+                <li><a href="#objective"><i class="fas fa-bullseye"></i> Objective</a></li>
+                <li><a href="#skills"><i class="fas fa-tools"></i> Skills</a></li>
+                <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
             </ul>
         </nav>
 
-        <section id="about">
+        <section id="about" class="tab-content active-section" style="display: block;">
             <h2>About Me</h2>
-            <p><!-- Add your content here --></p>
+            <p>Hello! I'm Omer Haker, a passionate digital marketing professional from Ramat Gan, Israel.<br>
+            I specialize in managing clients and projects from start to finish, combining strategic thinking with hands-on execution. I lead creative development, run performance-driven campaigns, and make data-informed decisions that help brands grow. Beyond the tools and tactics, my true focus is people.<br>
+            I work closely with every client to deeply understand their goals, their audience, and what success looks like for them. Whether it's developing a marketing strategy, building a campaign, or refining the creative to make it resonate, I stay involved in every detail from beginning to end.
+            What drives me is the combination of smart ideas, clear processes, and meaningful results.</p>
         </section>
 
-        <section id="objective">
+        <section id="objective" class="tab-content" style="display: none;">
             <h2>Objective</h2>
-            <p><!-- Add your content here --></p>
+            <p>To manage client projects from end to end—strategically, creatively, and operationally. I lead the full process, from the first brief to execution and optimization, combining close client collaboration with hands-on creative direction and data-driven decision making to deliver real business results.</p>
         </section>
 
-        <section id="skills">
+        <section id="skills" class="tab-content" style="display: none;">
             <h2>Skills</h2>
             <ul>
-                <!-- Add list of skills here -->
+                <li><strong>E-Commerce, Email Marketing, Conversion Strategy</strong> — experience in building and optimizing online stores, nurturing leads, and driving online sales.</li>
+                <li><strong>Social Media Marketing, Social Media Management, Paid Media</strong> — skilled in planning, launching, and scaling content and ads across platforms like Meta, TikTok, and LinkedIn.</li>
+                <li><strong>Marketing Strategy, Business Strategy, Strategic Planning</strong> — focused on creating clear, data-driven plans aligned with business goals and long-term growth.</li>
+                <li><strong>Digital Marketing Analytics, Marketing Analytics</strong> — using data to track performance, generate insights, and optimize campaigns in real-time.</li>
+                <li><strong>Digital Media Buying, Campaign Optimization, Funnel Building</strong> — hands-on management of full-funnel paid campaigns, with emphasis on performance and ROI.</li>
+                <li><strong>Sales, Customer Service, Client Relations</strong> — strong interpersonal skills for managing client expectations, closing deals, and maintaining ongoing trust.</li>
+                <li><strong>B2B Marketing, Consulting, Communication</strong> — experience working with businesses across sectors to build tailored strategies that drive measurable results.</li>
             </ul>
         </section>
 
-        <section id="experience">
+        <section id="experience" class="tab-content" style="display: none;">
             <h2>Experience</h2>
-            <p><!-- Add your content here --></p>
+            <p><strong>Co-Founder & Digital Project Lead – O&O Digital Future</strong><br>
+            Founder of a full-service digital agency delivering 360° marketing solutions. Responsible for managing projects from creative direction and social media content to paid media strategy and execution. Leading campaigns across multiple platforms while overseeing client communication, creative assets, and performance optimization.</p>
+
+            <p><strong>Project & Client Manager – Sabatier Group</strong><br>
+            Managing B2B client portfolios, leading strategic meetings to identify goals and build tailored digital solutions. Serving as the in-house Google Ads specialist while driving campaign planning, performance analysis, and continuous improvement in client success.</p>
+
+            <p><strong>Freelance Digital Marketing Manager</strong><br>
+            Managing marketing strategy and execution for diverse private clients. Overseeing full-funnel paid campaigns, creative development, social media strategy, and data analysis to generate tangible business outcomes.</p>
+
+            <p><strong>Digital Marketing Manager – AirDigital</strong><br>
+            Led the creation of digital content and marketing plans across social platforms. Worked closely with internal design and development teams to produce engaging creatives and manage data-driven campaigns.</p>
         </section>
     </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tabs = document.querySelectorAll('nav ul li a');
+  const contents = document.querySelectorAll('.tab-content');
+
+  function hideAll() {
+    contents.forEach(c => c.style.display = 'none');
+    tabs.forEach(t => t.classList.remove('active'));
+  }
+
+  // Default open About Me
+  hideAll();
+  document.querySelector('nav ul li a[href="#about"]').classList.add('active');
+  document.getElementById('about').style.display = 'block';
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function(e) {
+      e.preventDefault();
+      hideAll();
+      const target = this.getAttribute('href').substring(1);
+      document.getElementById(target).style.display = 'block';
+      this.classList.add('active');
+    });
+  });
+});
+</script>
 </body>
 </html>

@@ -17,14 +17,14 @@ body {
 header {
     text-align: center;
     padding: 30px 0;
-    background-color: #004d7a;
+    background-color: #280435cd;
     color: white;
     border-radius: 8px;
 }
 
 .profile-img {
-    width: 130px;
-    height: 130px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     margin-bottom: 15px;
     object-fit: cover;
@@ -36,7 +36,7 @@ header {
     margin-top: 10px;
     padding: 10px 20px;
     background: white;
-    color: #004d7a;
+    color: #280435ec;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
@@ -44,7 +44,7 @@ header {
 }
 
 .download-btn:hover {
-    background: #eee;
+    background: #eeeeeeb7;
 }
 
 nav ul {
@@ -80,4 +80,73 @@ section {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.tab-content {
+    display: none;
+}
+nav ul li a.active {
+    background-color: #bbb;
+    border-radius: 4px;
+}
+
+/* Icon styling for contact details */
+.tab-content p i {
+    margin-right: 8px;
+    font-size: 1.1em;
+    vertical-align: middle;
+}
+
+/* Fixed contact info card styling */
+.fixed-contact-info {
+    background: white;
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    font-size: 14px;
+    width: 200px;
+    text-align: left;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInDown 1s ease forwards;
+    animation-delay: 0.6s;
+}
+
+.fixed-contact-info:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.fixed-contact-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.fixed-contact-info ul li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.fixed-contact-info a {
+    color: #0074D9;
+    text-decoration: none;
+}
+
+.fixed-contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Fade-in animation for contact card */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
